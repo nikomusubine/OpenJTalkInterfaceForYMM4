@@ -5,6 +5,15 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AssemblyName>IOpenJTalkforYMM4</AssemblyName>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Help.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Help.txt" />
+  </ItemGroup>
 
 </Project>
