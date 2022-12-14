@@ -27,11 +27,6 @@ namespace OpenJTalkInterfaceForYMM4
                     Console.WriteLine(sr.ReadToEnd());
                     return;
                 }
-                string[] ParsedArgs = CmdParser.ParseCmdArgs(args);
-                if(ParsedArgs is null)
-                {
-                    return;
-                }
                 StringBuilder JtalkArgs = new StringBuilder();
 
                 string? binaryPath = null;
@@ -39,16 +34,16 @@ namespace OpenJTalkInterfaceForYMM4
 
                 for (int i = 0; i < args.Length; i++)
                 {
-                    switch (ParsedArgs[i])
+                    switch (args[i])
                     {
                         case "-bin":
-                            binaryPath = ParsedArgs[++i];
+                            binaryPath = args[++i];
                             break;
                         case "-text":
-                            text= ParsedArgs[++i];
+                            text= args[++i];
                             break;
                         default:
-                            JtalkArgs.AppendFormat("{0} ",args[i]);
+                            JtalkArgs.AppendFormat("\"{0}\" ",args[i]);
                             break;
                     }
                 }

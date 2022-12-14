@@ -1,8 +1,7 @@
 {
   "profiles": {
     "OpenJTalkInterfaceForYMM4": {
-      "commandName": "Project",
-      "commandLineArgs": "-bin \"E:\\OpenJTalk\\bin\\open_jtalk.exe\" -x \"E:\\OpenJTalk\\bin\\dic\" -m \"E:\\OpenJTalk\\bin\\HatsuneMiku.htsvoice\" -ow \"E:\\OpenJTalk\\bin\\test.wav\" -text \"てすと\""
+      "commandName": "Project"
     }
   }
 }
