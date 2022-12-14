@@ -32,4 +32,4 @@ Twitter: @niko_musubine
 
 ## パッチノート
 ### Version 1.0.0.0
-公開。それだけ
+> 公開。それだけ
