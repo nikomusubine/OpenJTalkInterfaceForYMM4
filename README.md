@@ -30,6 +30,6 @@ Windows11? 動作するんじゃね?知らんけど
 バグ等あったらTwitterまたはGitHubのissueにお願いします。
 Twitter: @niko_musubine
 
-##パッチノート
+## パッチノート
 ### Version 1.0.0.0
 公開。それだけ
