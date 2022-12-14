@@ -18,3 +18,14 @@ Open_JTalkをYMM4で使えるようにするものです
 
 ## 使用要件
 本ソフトを使用した動画には、このGitHubのURLを適当に載せておいてください。
+URL: https://github.com/Nikochan2525/OpenJTalkInterfaceForYMM4
+
+## 動作確認環境
+フレームワーク: .NET6.0
+OS: Windows10
+
+## その他
+Windows11? 動作するんじゃね?知らんけど
+何故C#か? 楽だから(適当)
+バグ等あったらTwitterまたはGitHubのissueにお願いします。
+Twitter: @niko_musubine
