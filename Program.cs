@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace OpenJTalkInterfaceForYMM4
 {
@@ -26,14 +27,45 @@ namespace OpenJTalkInterfaceForYMM4
                     Console.WriteLine(sr.ReadToEnd());
                     return;
                 }
-
-                StringBuilder sb = new StringBuilder();
-                
-                for(int i = 0; i < args.Length; i++)
+                string[] ParsedArgs = CmdParser.ParseCmdArgs(args);
+                if(ParsedArgs is null)
                 {
-                    switch (args[i])
+                    return;
+                }
+                StringBuilder JtalkArgs = new StringBuilder();
+
+                string? binaryPath = null;
+                string? text = null;
+
+                for (int i = 0; i < args.Length; i++)
+                {
+                    switch (ParsedArgs[i])
                     {
+                        case "-bin":
+                            binaryPath = ParsedArgs[++i];
+                            break;
+                        case "-text":
+                            text= ParsedArgs[++i];
+                            break;
+                        default:
+                            JtalkArgs.AppendFormat("{0} ",args[i]);
+                            break;
                     }
+                }
+
+                if (binaryPath != null && text != null)
+                {
+                    Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+                    using (StreamWriter sw = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory+"text.txt", false,    System.Text.Encoding.GetEncoding("shift_jis")))
+                    {
+                        sw.Write(text);
+                    }
+                    JtalkArgs.AppendFormat("\"{0}text.txt\"", AppDomain.CurrentDomain.BaseDirectory);
+                    Process prs=new Process();
+                    prs.StartInfo.FileName = binaryPath;
+                    prs.StartInfo.Arguments = JtalkArgs.ToString();
+
+                    prs.Start();
                 }
 
             }

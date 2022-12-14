@@ -28,9 +28,9 @@ namespace OpenJTalkInterfaceForYMM4
             StringBuilder sb = new StringBuilder();
             for(int i = 0; i != str.Length; i++)
             {
-                switch (str.Substring(i))
+                switch (str[i])
                 {
-                    case "\'":
+                    case '\'':
                         if (situation == 0)
                         {
                             situation = 1;
@@ -45,12 +45,45 @@ namespace OpenJTalkInterfaceForYMM4
                             sb.Append("\'");
                         }
                         break;
-                    case "\"":
+                    case '\"':
+                        if (situation == 0)
+                        {
+                            situation = 2;
+                        }
+
+                        else if (situation == 1)
+                        {
+                            sb.Append("\"");
+                        }
+                        else if (situation == 2)
+                        {
+                            situation = 0;
+                        }
                         break;
-                    case " ":
+                    case ' ':
+                        if (situation == 0)
+                        {
+                            strs.Add(sb.ToString());
+                            sb.Clear();
+                        }
+
+                        else if (situation == 1)
+                        {
+                            sb.Append(" ");
+                        }
+                        else if (situation == 2)
+                        {
+                            sb.Append(" ");
+                        }
+                        break;
+                    default:
+                        sb.Append(str[i]);
                         break;
                 }
             }
+
+            strs.Add(sb.ToString());
+            return strs.ToArray();
         } 
     }
 }
