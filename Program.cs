@@ -17,7 +17,7 @@ namespace OpenJTalkInterfaceForYMM4
             }
             else
             {
-                if (args[0].ToLower() == "help")
+                if (args[0].ToLower() == "-help")
                 {
                     System.Reflection.Assembly myAssembly =   System.Reflection.Assembly.GetExecutingAssembly();
                     System.IO.StreamReader sr =
@@ -50,17 +50,15 @@ namespace OpenJTalkInterfaceForYMM4
 
                 if (binaryPath != null && text != null)
                 {
-                    Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-                    using (StreamWriter sw = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory+"text.txt", false,    System.Text.Encoding.GetEncoding("shift_jis")))
-                    {
-                        sw.Write(text);
-                    }
-                    JtalkArgs.AppendFormat("\"{0}text.txt\"", AppDomain.CurrentDomain.BaseDirectory);
                     Process prs=new Process();
                     prs.StartInfo.FileName = binaryPath;
                     prs.StartInfo.Arguments = JtalkArgs.ToString();
-
+                    prs.StartInfo.RedirectStandardInput = true;
                     prs.Start();
+                    using(var stdin = prs.StandardInput)
+                    {
+                        stdin.WriteLine(text);
+                    }
                 }
 
             }
