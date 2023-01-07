@@ -7,11 +7,19 @@ using System.Diagnostics;
 using System.Xml.Serialization;
 using System.Text.RegularExpressions;
 using System.Reflection;
+using System.Runtime.InteropServices;
 
 namespace OpenJTalkInterfaceForYMM4
 {
     internal class Program
     {
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
+        static extern uint GetPrivateProfileSectionNames(string lpszReturnBuffer, uint nSize, string lpFileName);
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
+        public static extern uint GetPrivateProfileString(string lpAppName, string lpKeyName, string lpDefault, StringBuilder lpReturnedString, uint nSize, string lpFileName);
+        
+
         static void Main(string[] args)
         {
             List<UserDictionary> UserDic = new List<UserDictionary>();
@@ -111,6 +119,10 @@ namespace OpenJTalkInterfaceForYMM4
         }
     }
 
+    class Character
+    {
+        public string Name { get; set; }
 
+    }
 
 }
