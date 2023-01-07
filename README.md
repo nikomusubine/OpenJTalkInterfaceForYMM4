@@ -11,7 +11,7 @@ Open_JTalkをYMM4で使えるようにするものです
 6. 実行ファイルを展開したフォルダ内のIOpenJTalkforYMM4.exeに指定
 7. 	
 	1. character.iniを次のように記述します。
-	```ini
+```ini
 [キャラクター名]
 HTSVoice=<HTSVoiceのパス>
 SamplingFrequency=<サンプリング周波数>
@@ -24,17 +24,17 @@ Threshold=<有声音/無声音スレッショルド>
 WeightOfGVSpectrum=<スペクトラム向けGVの重さ>
 WeightOfGVlogF0=<log F0向けGVの重さ>
 Volume=<音量>
-	```
+```
 		値は任意に書き換えてください。
 	2. Config.iniを次のように書き換えます。
-	```ini
+```ini
 [Config]
 JTalkBinaryPath=<OpenJTalkのパス>
 DictionaryPath=<辞書ディレクトリのパス>
-	```
+```
 
 	3. コマンドライン引数を次のように設定します。
-	```cmd
+```cmd
 	-character [キャラクター名] -text "$text" -ow "$file"
 ```
 	これで設定は完了です。
@@ -42,9 +42,9 @@ DictionaryPath=<辞書ディレクトリのパス>
 	または、
 
 	コマンドライン引数を次のように設定
-	```cmd
-	-bin [OpenJTalkのパス] -text "$text" -m [htsvoiceファイル] -x [辞書のパス] -ow "$file"
-	```
+```cmd
+-bin [OpenJTalkのパス] -text "$text" -m [htsvoiceファイル] -x [辞書のパス] -ow "$file"
+```
 	そのほかの引数はお好みで設定してください。OpenJTalkと同じです。
 
 これでAquesTalkやVOICEVOXと同様にOpenJTalkを扱えるようになります。
