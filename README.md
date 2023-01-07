@@ -17,21 +17,27 @@ Open_JTalkをYMM4で使えるようにするものです
 これでAquesTalkやVOICEVOXと同様にOpenJTalkを扱えるようになります。
 
 ## 使用要件
+<br>
 本ソフトを使用した動画には、このGitHubのURLを適当に載せておいてくれたら嬉しいです
+<br>
 URL: https://github.com/Nikochan2525/OpenJTalkInterfaceForYMM4
-Twitterその他で布教してくれたらもう嬉しすぎて飛び上がります
+<br>
+Twitterその他で布教してくれたらもう嬉しすぎて飛び上がります  
 
 ## 動作確認環境
 - フレームワーク: .NET6.0
 - OS: Windows10
 
 ## その他
-Windows11? 動作するんじゃね?知らんけど
-何故C#か? 楽だから(適当)
-バグ等あったらTwitterまたはGitHubのissueにお願いします。
+Windows11? 動作するんじゃね?知らんけど  
+何故C#か? 楽だから(適当)  
+バグ等あったらTwitterまたはGitHubのissueにお願いします。  
 Twitter: @niko_musubine
 
 ## パッチノート
+### Version2.1.0.0
+> UserDictionaryGUIの挙動を修正  
+> Alt+十字上下 で順序を変更可能になりました。
 ### Version 2.0.0.0
 > ユーザ辞書を追加しました
 ### Version 1.2.0.0
