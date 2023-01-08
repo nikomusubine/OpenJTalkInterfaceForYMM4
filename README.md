@@ -25,7 +25,7 @@ WeightOfGVSpectrum=<スペクトラム向けGVの重さ>
 WeightOfGVlogF0=<log F0向けGVの重さ>
 Volume=<音量>
 ```
-値は任意に書き換えてください。
+値は任意に書き換えてください。  
 2. Config.iniを次のように書き換えます。
 ```ini
 [Config]
