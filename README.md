@@ -25,27 +25,27 @@ WeightOfGVSpectrum=<スペクトラム向けGVの重さ>
 WeightOfGVlogF0=<log F0向けGVの重さ>
 Volume=<音量>
 ```
-		値は任意に書き換えてください。
-	2. Config.iniを次のように書き換えます。
+値は任意に書き換えてください。
+2. Config.iniを次のように書き換えます。
 ```ini
 [Config]
 JTalkBinaryPath=<OpenJTalkのパス>
 DictionaryPath=<辞書ディレクトリのパス>
 ```
 
-	3. コマンドライン引数を次のように設定します。
+3. コマンドライン引数を次のように設定します。
 ```cmd
 -character [キャラクター名] -text "$text" -ow "$file"
 ```
-	これで設定は完了です。
+これで設定は完了です。
 
-	または、
+または、
 
-	コマンドライン引数を次のように設定
+コマンドライン引数を次のように設定
 ```cmd
 -bin [OpenJTalkのパス] -text "$text" -m [htsvoiceファイル] -x [辞書のパス] -ow "$file"
 ```
-	そのほかの引数はお好みで設定してください。OpenJTalkと同じです。
+そのほかの引数はお好みで設定してください。OpenJTalkと同じです。
 
 これでAquesTalkやVOICEVOXと同様にOpenJTalkを扱えるようになります。
 
