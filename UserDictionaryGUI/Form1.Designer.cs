@@ -42,7 +42,8 @@
             // 
             // UserDictionaryView
             // 
-            this.UserDictionaryView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.UserDictionaryView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UserDictionaryView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UserDictionaryView.ContextMenuStrip = this.DicViewMenuStrip;
@@ -96,6 +97,7 @@
             // 
             // SaveButton
             // 
+            this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveButton.Location = new System.Drawing.Point(713, 415);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
@@ -112,7 +114,7 @@
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.UserDictionaryView);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "UserDictionary";
             ((System.ComponentModel.ISupportInitialize)(this.UserDictionaryView)).EndInit();
             this.DicViewMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
